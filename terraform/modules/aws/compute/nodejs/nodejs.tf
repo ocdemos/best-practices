@@ -171,8 +171,8 @@ resource "template_file" "blue_user_data" {
     vault_token       = "${var.vault_token}"
     vault_policy      = "${var.vault_policy}"
     aws_region        = "${var.region}"
-    aws_access_id     = "${element(split(",", terraform_remote_state.aws_global.output.iam_vault_access_ids), index(split(",", terraform_remote_state.aws_global.output.iam_vault_users), format("vault-%s", var.atlas_environment)))}"
-    aws_secret_key    = "${element(split(",", terraform_remote_state.aws_global.output.iam_vault_secret_keys), index(split(",", terraform_remote_state.aws_global.output.iam_vault_users), format("vault-%s", var.atlas_environment)))}"
+    aws_access_id     = "${element(split(",", data.terraform_remote_state.aws_global.iam_vault_access_ids), index(split(",", data.terraform_remote_state.aws_global.iam_vault_users), format("vault-%s", var.atlas_environment)))}"
+    aws_secret_key    = "${element(split(",", data.terraform_remote_state.aws_global.iam_vault_secret_keys), index(split(",", data.terraform_remote_state.aws_global.iam_vault_users), format("vault-%s", var.atlas_environment)))}"
   }
 }
 
@@ -192,8 +192,8 @@ resource "template_file" "green_user_data" {
     vault_token       = "${var.vault_token}"
     vault_policy      = "${var.vault_policy}"
     aws_region        = "${var.region}"
-    aws_access_id     = "${element(split(",", terraform_remote_state.aws_global.output.iam_vault_access_ids), index(split(",", terraform_remote_state.aws_global.output.iam_vault_users), format("vault-%s", var.atlas_environment)))}"
-    aws_secret_key    = "${element(split(",", terraform_remote_state.aws_global.output.iam_vault_secret_keys), index(split(",", terraform_remote_state.aws_global.output.iam_vault_users), format("vault-%s", var.atlas_environment)))}"
+    aws_access_id     = "${element(split(",", data.terraform_remote_state.aws_global.iam_vault_access_ids), index(split(",", data.terraform_remote_state.aws_global.iam_vault_users), format("vault-%s", var.atlas_environment)))}"
+    aws_secret_key    = "${element(split(",", data.terraform_remote_state.aws_global.iam_vault_secret_keys), index(split(",", data.terraform_remote_state.aws_global.iam_vault_users), format("vault-%s", var.atlas_environment)))}"
   }
 }
 
