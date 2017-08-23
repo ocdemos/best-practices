@@ -167,8 +167,7 @@ If you decide to update any of the artifact names, be sure those name changes ar
 - [ ] [`terraform push`](https://github.com/hashicorp/atlas-examples/blob/master/setup/general.md#deploy-with-terraform) your environment to Atlas to set the Terraform variables, the GitHub Ingress does not currently pull in variables
   - [ ] [Set local environment variables](https://github.com/hashicorp/best-practices/blob/master/terraform/providers/aws/README.md#set-local-environment-variables)
   - [ ] From the [root directory](https://github.com/hashicorp/best-practices), navigate to the [`global` folder](https://github.com/hashicorp/best-practices/blob/master/terraform/providers/aws/global): `cd terraform/providers/aws/global/.`
-  - [ ] Configure & pull remote state: `terraform remote config -backend-config name=$ATLAS_USERNAME/aws-global`
-  - [ ] Get latest modules: `terraform get`
+  - [ ] Configure & pull remote state: `terraform init -backend-config name=$ATLAS_USERNAME/aws-global`
   - [ ] Push to Atlas: `terraform push -name $ATLAS_USERNAME/aws-global -var "atlas_token=$ATLAS_TOKEN" -var "atlas_username=$ATLAS_USERNAME" ../../../../terraform/`
     - The path `../../../../terraform/` must be provided so that the Terraform command and project
       files are referenced correctly.
