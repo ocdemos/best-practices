@@ -56,10 +56,6 @@ provider "aws" {
   region = "${var.region}"
 }
 
-atlas {
-  name = "${var.atlas_username}/${var.atlas_environment}"
-}
-
 resource "aws_key_pair" "site_key" {
   key_name   = "${var.atlas_environment}"
   public_key = "${var.site_public_key}"
