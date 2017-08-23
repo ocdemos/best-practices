@@ -85,6 +85,8 @@ USERDATA
     }
 
     inline = [
+      # Reinit openvpn access server
+      "/usr/local/openvpn_as/bin/ovpn-init --batch --force --host=${self.public_ip}",
       # Insert our SSL cert
       "echo '${var.ssl_cert}' | sudo tee /usr/local/openvpn_as/etc/web-ssl/server.crt > /dev/null",
       "echo '${var.ssl_key}' | sudo tee /usr/local/openvpn_as/etc/web-ssl/server.key > /dev/null",
