@@ -135,7 +135,7 @@ module "data" {
   atlas_environment  = "${var.atlas_environment}"
   atlas_token        = "${var.atlas_token}"
   sub_domain         = "${var.sub_domain}"
-  route_zone_id      = "${terraform_remote_state.aws_global.output.zone_id}"
+  route_zone_id      = "${terraform_remote_state.aws_global.zone_id}"
 
   consul_amis          = "${module.artifact_consul.amis}"
   consul_node_count    = "${var.consul_node_count}"
