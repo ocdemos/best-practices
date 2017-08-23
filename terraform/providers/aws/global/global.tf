@@ -117,6 +117,12 @@ Vault IAM:
 CONFIG
 }
 
+resource "tls_private_key" "testo-example" {
+  count       = "1"
+  algorithm   = "ECDSA"
+  ecdsa_curve = "P384"
+}
+  
 output "iam_admin_users"       { value = "${module.iam_admin.users}" }
 output "iam_admin_access_ids"  { value = "${module.iam_admin.access_ids}" }
 output "iam_admin_secret_keys" { value = "${module.iam_admin.secret_keys}" }
