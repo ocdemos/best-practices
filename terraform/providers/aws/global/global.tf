@@ -1,3 +1,10 @@
+# Store this config in Terraform Enterprise
+terraform {
+  backend "atlas" {
+    address = "https://atlas.hashicorp.com"
+  }
+}
+
 variable "domain"            { }
 variable "atlas_username"    { }
 variable "atlas_environment" { }
