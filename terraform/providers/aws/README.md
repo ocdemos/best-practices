@@ -189,7 +189,7 @@ If you decide to update any of the artifact names, be sure those name changes ar
   - [ ] Update `iam_admins` with a comma separated list of users you'd like added to the `admin` group in IAM (e.g. `cameron,jay,jon,kevin`)
     - This is defaulted to a user named `global-admin`
     - Be sure that you don't use a name that already exists in IAM for this AWS account or you will see conflict errors
-    - If you don't want any admin users to be created, just leave this blank
+    - If you don't want any admin users to be created, just leave this blank (NW: This does not seem to be possible)
 - [ ] In "Integrations": under "GitHub Integration" click **Update GitHub settings** to pull the latest configuration from master
 - [ ] In "Changes": click **Queue plan** if one has not already been queued, then **Confirm & Apply** to provision the `aws-global` environment
 
