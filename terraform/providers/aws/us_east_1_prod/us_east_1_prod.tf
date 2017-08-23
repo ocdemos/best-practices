@@ -4,7 +4,6 @@
 terraform {
   backend "atlas" {
     # This is not possible (no interpolations allowed here)
-    name    = "opencredo/aws-us-east-1-prod"
     address = "https://atlas.hashicorp.com"
   }
 }
@@ -78,7 +77,7 @@ data "terraform_remote_state" "aws_global" {
   backend = "atlas"
 
   config {
-    name = "opencredo/aws-us-east-1-prod"
+    name = "${var.atlas_username}/${var.atlas_aws_global}"
   }
 
 }
