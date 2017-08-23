@@ -17,9 +17,9 @@ provider "aws" {
   region = "${var.region}"
 }
 
-atlas {
-  name = "${var.atlas_username}/${var.atlas_environment}"
-}
+#atlas {
+#  name = "${var.atlas_username}/${var.atlas_environment}"
+#}
 
 module "iam_admin" {
   source = "../../../modules/aws/util/iam"
