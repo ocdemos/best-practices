@@ -145,11 +145,12 @@ resource "aws_elb" "green" {
   }
 }
 
-resource "terraform_remote_state" "aws_global" {
+data "terraform_remote_state" "aws_global" {
   backend = "atlas"
 
   config {
-    name = "${var.atlas_username}/${var.atlas_aws_global}"
+    name         = "${var.atlas_username}/${var.atlas_aws_global}"
+    access_token = "${var.atlas_token}"
   }
 
   lifecycle { create_before_destroy = true }
