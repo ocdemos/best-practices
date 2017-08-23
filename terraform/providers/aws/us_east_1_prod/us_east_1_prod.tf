@@ -1,5 +1,14 @@
 
 
+# Store this config in Terraform Enterprise
+terraform {
+  backend "atlas" {
+    # This is not possible (no interpolations allowed here)
+    name    = "opencredo/aws-us-east-1-prod"
+    address = "https://atlas.hashicorp.com"
+  }
+}
+
 variable "name"              { }
 variable "artifact_type"     { }
 variable "region"            { }
